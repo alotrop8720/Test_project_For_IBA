@@ -22,7 +22,7 @@ public class FileIO {
     public List<String> readRowWise(File file){
         try {
             return Files.readAllLines(Paths.get(file.getPath()));
-        } catch (IOException e) {
+        } catch (Exception e) {
             Writers.writeError(writerEx, e);
         }
         return null;
@@ -122,7 +122,8 @@ public class FileIO {
             while((line = bufferErr.readLine()) != null) {
                 err += line;
             }
-            Writers.writeError(writerEx, new Exception(err));
+            if (!err.equals(""))
+                Writers.writeError(writerEx, new Exception(err));
             bufferErr.close();
         }catch (IOException e){
             Writers.writeError(writerEx, e);

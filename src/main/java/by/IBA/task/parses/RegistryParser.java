@@ -34,13 +34,15 @@ public class RegistryParser implements Parser {
 
             String lines = Utils.getLastBufferLine(p.getInputStream(), writerEx);
             //parse string from buffer
-            String linesArr[] = lines.replaceAll("    ", " ").substring(1).split(" ");
-            List<String> couple = new ArrayList<>();
-            Matcher m = Pattern.compile("").matcher(lines);
-            couple.add(linesArr[0]);
-            couple.add("=");
-            couple.add(linesArr[2]);
-            fileIO.write(couple, new File("rk_out.txt"), "");
+            if (!lines.equals("")) {
+                String linesArr[] = lines.replaceAll("    ", " ").substring(1).split(" ");
+                List<String> couple = new ArrayList<>();
+                Matcher m = Pattern.compile("").matcher(lines);
+                couple.add(linesArr[0]);
+                couple.add("=");
+                couple.add(linesArr[2]);
+                fileIO.write(couple, new File("rk_out.txt"), "");
+            }
             fileIO.writeErrors(p.getErrorStream());
         }
         catch (Exception e){

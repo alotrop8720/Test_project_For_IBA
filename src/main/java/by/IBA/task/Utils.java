@@ -56,15 +56,17 @@ public class Utils {
     public static File constructFile(String filePath) {
         File file = new File(filePath);
         try {
-            if (file.exists()) {
-                if (filePath.contains(":")) {
-                    return file;
-                } else {
+            if (filePath.contains(":")) {
+                return file;
+            } else if (!filePath.contains(":")) {
+                File canFile = new File(file.getCanonicalPath());
+                if (canFile.exists())
                     return new File(file.getCanonicalPath());
+                else {
+                    logger.info("You have this path:" + canFile + "\n" +
+                            "File not found.");
+                    System.exit(0);
                 }
-            } else {
-                logger.info("File not found.");
-                System.exit(0);
             }
         }catch (Exception e){
             logger.info("File not found.");

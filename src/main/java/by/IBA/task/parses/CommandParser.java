@@ -21,7 +21,7 @@ public class CommandParser implements Parser{
     public void parse() {
         try
         {
-            ProcessBuilder builder = new ProcessBuilder(commands);
+            ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", commands);
             Process p = builder.start();
             fileIO.write(p.getInputStream(),new File("cmd_out.txt"));
             fileIO.writeErrors(p.getErrorStream());

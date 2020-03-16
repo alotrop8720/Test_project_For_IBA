@@ -26,4 +26,5 @@ public abstract class ExceptionWriter {
         ex.printStackTrace(log);
         log.flush();
     }
+
 }
