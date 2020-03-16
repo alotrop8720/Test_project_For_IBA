@@ -1,0 +1,16 @@
+by\IBA\task\parses\CommandParser.class
+by\IBA\task\parses\FileParser.class
+by\IBA\task\CheckKeys.class
+by\IBA\task\ParseMap.class
+by\IBA\task\exceptions\CMDKeyExceptionWriter.class
+by\IBA\task\exceptions\RKKeyExceptionWriter.class
+by\IBA\task\exceptions\WriterExceptionFactory.class
+by\IBA\task\parses\Parser.class
+by\IBA\task\exceptions\Writers.class
+by\IBA\task\FileIO.class
+by\IBA\task\App.class
+by\IBA\task\exceptions\ExceptionWriter.class
+by\IBA\task\StartProcess.class
+by\IBA\task\parses\RegistryParser.class
+by\IBA\task\Utils.class
+by\IBA\task\exceptions\FKeyExceptionWriter.class
